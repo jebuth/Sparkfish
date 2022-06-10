@@ -7,7 +7,6 @@ namespace Sparkfish.Controllers
     /// The controller is tightly coupled to the Listify object.
     /// </summary>
     [ApiController]
-    [Route("listify")]
     public class HomeController : Controller
     {
         private ILogger<HomeController> logger;
@@ -20,13 +19,13 @@ namespace Sparkfish.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Return a value at the provided index within a range.
         /// </summary>
-        /// <param name="begin"></param>
-        /// <param name="end"></param>
-        /// <param name="index"></param>
-        /// <returns></returns>
-        [HttpGet("{begin}/{end}/{index}")]
+        /// <param name="begin">Begininning of the range (inclusive).</param>
+        /// <param name="end">End of the range (inclusive).</param>
+        /// <param name="index">Target index to access.</param>
+        /// <returns>The value of the element at index.</returns>
+        [HttpGet("listify/{begin}/{end}/{index}")]
         public IActionResult Index(int begin, int end, int index)
         {
             try

@@ -13,6 +13,11 @@ namespace Sparkfish.Services
             items = Enumerable.Empty<int>();
         }
 
+        /// <summary>
+        /// Initialize Enumerable when instantiating this class.
+        /// </summary>
+        /// <param name="begin"></param>
+        /// <param name="end"></param>
         public Listify(int begin = 1, int end = 100)
         {
             items = Enumerable.Range(begin, (end - begin) + 1);
