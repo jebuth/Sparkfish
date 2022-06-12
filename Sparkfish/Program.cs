@@ -10,12 +10,14 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
-builder.Services.AddSwaggerGen(config => {
-    config.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+builder.Services.AddSwaggerGen(options => {
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
+        Version = "v1",
         Title = "Listify",
-        Version = "v1"
+        Description = "Sparkfish Assessment",
     });
+
 });
 
 builder.Services.AddTransient<IListify, Listify>();
