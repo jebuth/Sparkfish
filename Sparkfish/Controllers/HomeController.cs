@@ -36,7 +36,8 @@ namespace Sparkfish.Controllers
                 // "When I access index position 50"
                 var target = myList[index];
 
-                return Ok(target);
+                return Ok("workflow deployed.");
+                //return Ok(target);
             }
             catch (Exception ex)
             {
